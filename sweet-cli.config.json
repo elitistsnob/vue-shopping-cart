@@ -1,0 +1,24 @@
+{
+  "baseDir": "./",
+  "vueComponent": {
+    "dir": "components",
+    "types": {
+      "module": {
+        "dir": "modules",
+        "prefix": "App"
+      }
+    }
+  },
+  "vueLayout": {
+    "dir": "layouts"
+  },
+  "vueRoute": {
+    "dir": "pages"
+  },
+  "vueMiddleware": {
+    "dir": "middleware"
+  },
+  "vuex": {
+    "dir": "store"
+  }
+}
