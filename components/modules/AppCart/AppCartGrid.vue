@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import {mapState, mapGetters} from 'vuex';
 import AppCartItem from '~/components/modules/AppCart/AppCartItem';
 
 export default {
@@ -16,30 +16,35 @@ export default {
         ...mapState({
             items: state => state.cart.items,
         }),
+        // cartItems() { return this.$store.getters.cartItems; },
     }
 };
 </script>
 
 <style rel="stylesheet/scss" lang="scss" type="text/scss">
-.app-cart-footer {
-    background: #ddd;
-    color: #fff;
-    padding: 20px;
+.app-cart-grid {
+    padding: 0;
 
-    .app-cart-total {
-        color: #333;
-        display: flex;
-        font-size: 1.5em;
-        margin: 0;
+    @media all and (max-width: 570px) {
+        .app-cart-grid-item {
+            align-items: center;
+            flex-direction: column;
+        }
 
-        span {
-            display: block;
-            text-align: right;
+        .app-cart-grid-title {
+            text-align: center;
+        }
+
+        .app-cart-grid-title,
+        .app-cart-grid-item-qty {
+            border-right: 0;
         }
     }
 }
 
-.app-cart-grid {
-    padding: 0;
+@media all and (max-width: 900px) {
+    .app-cart {
+        margin: 20px auto 0;
+    }
 }
 </style>

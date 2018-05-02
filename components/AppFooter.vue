@@ -1,7 +1,7 @@
 <template>
     <footer class="site-footer">
         <section class="site-footer-topper">
-            <h2>Why buy your guitar from <strike>Sweetwater</strike> Hipster Guitar?</h2>
+            <h2>Why buy your guitar from Hipster?</h2>
             <a href="" class="btn">Tell me why!</a>
         </section>
         <div class="inner">
@@ -40,7 +40,7 @@
             <a href=""><app-logo /></a>
         </div>
 
-        <p class="copyright">&copy;{{ new Date().getFullYear() }} Hipster Guitars, Inc. All rights reserved. So don't steal our stuff or we'll sue you, jerks!</p>
+        <p class="copyright">&copy;{{ new Date().getFullYear() }} Hipster Guitars, Inc. All rights reserved. So don't steal our content or we'll sue you, jerks!</p>
          
         
 
@@ -78,15 +78,27 @@ export default {
         padding: 5em 2em;
         position: relative;
 
+        @media all and (max-width: 580px) {
+            padding: 2em;
+        }
+
         .btn {
             background: #F62B0A;
             color: #fff;
             font-size: 20px;
             margin-top: 2.5em;
+
+            @media all and (max-width: 580px) {
+                margin-top: 1.5em;
+            }
         }
 
         h2 {
             font-size: 30px;
+
+            @media all and (max-width: 580px) {
+                font-size: 22px;
+            }
         }
 
         * {
@@ -112,9 +124,25 @@ export default {
         margin: 0 auto;
         max-width: 1400px;
 
+        @media all and (max-width: 1160px) {
+            flex-wrap: wrap;
+        }
+
+        @media all and (max-width: 570px) {
+            padding: 0;
+        }
+
+         @media all and (max-width: 400px) {
+                text-align: center;
+         }
+
         nav {
             line-height: 1.5;
             text-align: left;
+
+             @media all and (max-width: 400px) {
+                text-align: center;
+            }
 
             a {
                 color: #999;
@@ -129,11 +157,29 @@ export default {
         h4 {
             margin: 1em 0;
             text-align: left;
+
+             @media all and (max-width: 400px) {
+                text-align: center;
+            }
         }
 
         .nav-column {
             flex: 1 1 auto;
             padding: 0 30px;
+
+            @media all and (max-width: 1160px) {
+                width: 50%;
+
+                &:nth-of-type(3) {
+                    max-width: 500px;
+                    margin: 40px 0;
+                    min-height: 100px;
+                }
+            }
+
+            @media all and (max-width: 400px) {
+                width: 100%;
+            }
         }
     }
 
@@ -149,8 +195,8 @@ export default {
 
         svg {
             fill: #000 !important;
-            height: 120px;
-            width: 120px;
+            height: 170px;
+            width: 200px;
         }
     }
 

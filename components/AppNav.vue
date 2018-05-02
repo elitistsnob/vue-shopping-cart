@@ -1,10 +1,10 @@
 <template>
     <nav class="nav">
         <ul class="menu">
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/tips">Tips & Tricks</a></li>
-            <li><a href="/locate">Find a dealer</a></li>
-            <li><a href="/support">Support</a></li>
+            <li><nuxt-link to="/shop">Shop</nuxt-link></li>
+            <li><nuxt-link to="/tips">Tips & Tricks</nuxt-link></li>
+            <li><nuxt-link to="/locate">Find a dealer</nuxt-link></li>
+            <li><nuxt-link to="/support">Support</nuxt-link></li>
         </ul>
     </nav>
 </template>

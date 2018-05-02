@@ -13,13 +13,15 @@
 
     .app-cart-total {
         color: #333;
-        display: flex;
+        display: block;
         font-size: 1.5em;
         margin: 0;
+        text-align: right;
 
         span {
-            display: block;
-            text-align: right;
+            display: inline-block;
+            font-weight: 600;
+            margin-left: 10px;
         }
     }
 }

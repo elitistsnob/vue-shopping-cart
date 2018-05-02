@@ -1,13 +1,14 @@
 <template>
     <div>
-        <div class="site-banner">Welcome to Hipster Guitars. A <span>safe-space</span> for Millenial guitar fans.</div>
+        <div class="site-banner">Welcome to Hipster Guitars. A <span>safe-space</span> for Millenial musicians.</div>
         <header class="site-header">
-            <a href="/" class="site-logo">
+            <nuxt-link to="/" class="site-logo">
                 <app-logo />
-            </a>
+            </nuxt-link>
             <nuxt-link to="/cart" class="cart-icon"><app-cart-icon /></nuxt-link>
             <div class="site-nav"><app-nav /></div>
         </header>
+
         <section class="promo">
             <div class="inner">
                 <h1 v-if="$nuxt.$route.name == 'shop'">Shop Guitars</h1>
@@ -18,19 +19,46 @@
                 <h1 v-if="$nuxt.$route.name == 'index'">Welcome</h1>
             </div>
         </section>
+   
     </div>  
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
-import AppNav from "~/components/AppNav.vue";
-import AppCartIcon from "~/components/AppCartIcon.vue";
+            
+import {mapState} from 'vuex';
+import AppLogo from "~/components/AppLogo";
+import AppNav from "~/components/AppNav";
+import AppCartIcon from "~/components/AppCartIcon";
 
 export default {
     components: {
         AppNav,
         AppLogo,
         AppCartIcon,
-    }
+    },
 };
 </script>
+
+<style rel="stylesheet/scss" lang="scss" type="text/scss">
+.site-header {
+
+    @media all and (max-width: 730px) {
+        .nav {
+            ul {
+                border-top: 1px solid #ddd;
+                flex-direction: column;
+            }
+
+            a {
+                border-bottom: 1px solid #ddd;
+                padding: 10px;
+            }
+        }
+
+        .cart-icon {
+            right: 5px;
+        }
+    }
+}
+
+</style>

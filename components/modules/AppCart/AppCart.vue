@@ -5,7 +5,6 @@
             <app-cart-grid />
             <app-cart-footer />
         </div>
-
         <div v-else>
             <app-cart-empty />
         </div>
@@ -31,7 +30,7 @@ export default {
         ...mapState({
             items: state => state.cart.items,
         }),
-    }
+    },
 };
 </script>
 

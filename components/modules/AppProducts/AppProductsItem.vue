@@ -1,5 +1,6 @@
 <template>
     <div class="product">
+        <div v-if="product.status == 'sold'" class="badge sold">SOLD</div>
         <div class="product-thumb">
             <div class="flex-fix">
             <!-- <div class="product-thumb" :style="{background: `url(https://media.sweetwater.com/images/items/750/${ product.itemid }-large.jpg) no-repeat scroll center center/78% 85%`}"> -->
@@ -11,27 +12,27 @@
         </div>
         <p class="product-price">${{ product.price }}</p>
         <p class="product-button">
-            <a href="" class="btn btn--add-to-cart" @click.prevent="addToCart(product)">Add to Cart</a>
+            <a href="" v-if="product.status == 'in-stock'" class="btn btn--add-to-cart" @click.prevent="addToCart(product)">Add to Cart</a>
         </p>
     </div>
 </template>
 
 <script>
-    import {mapActions} from 'vuex';
+    import {mapActions, mapGetters} from 'vuex';
 
     export default  {
-         props: {
-             product: {
-                 required: true,
-                 type: Object,
-             }
-         },
-         methods: {
-            ...mapActions({
-                addToCart: 'cart/addItem'
-            })
+        props: {
+            product: {
+                required: true,
+                type: Object,
+            }
         },
-         
+        methods: {
+            ...mapActions({
+                addToCart: 'cart/addItem',
+                removeFromCart: 'cart/removeItem',
+            }),
+        },  
     }
 </script>
 
@@ -48,7 +49,9 @@
     flex-wrap: nowrap;
     // flex: 1 1 auto;
     margin: 5px;
+    overflow: hidden;
     padding: 0 0 25px 0;
+    position: relative;
     text-align: center;
     width: calc( 19% -10px);
 
@@ -116,6 +119,23 @@
         justify-content: center;
         margin: 0;
         margin-top: 10px;
+    }
+
+    .badge {
+        background: red;
+        border-radius: 100%;
+        color: #fff;
+        font-weight: 900;
+        height: 80px;
+        line-height: 1;
+        padding: 31px 0 23px;
+        position: absolute;
+            left: 20px;
+            top: 20px;
+        text-align: center;
+        transform: rotate(-21deg);
+        width: 80px;
+        z-index: 2;
     }
 }
 </style>

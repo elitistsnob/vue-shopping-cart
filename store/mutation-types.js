@@ -8,3 +8,4 @@ export const NAMESPACE_UPDATE_SOMETHING = `${SN_NAMESPACE}/UPD_SOMETHING`;
 
 export const SN_CART = 'cart';
 export const CART_ADD_ITEM = `${SN_CART}/ADD_ITEM`;
+export const CART_REMOVE_ITEM = `${SN_CART}/REMOVE_ITEM`;

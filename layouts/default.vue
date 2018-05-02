@@ -222,6 +222,10 @@
                 font-weight: 900;
                 // text-shadow: 5px 5px 0 rgba(198, 116, 9, .6);
                 text-transform: uppercase;
+
+                 @media all and (max-width: 480px) {
+                    font-size: 2em;
+                }
             }
         }
     }

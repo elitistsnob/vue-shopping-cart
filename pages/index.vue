@@ -1,22 +1,20 @@
 <template>
     <div class="site-wrapper">
-       <app-header />
-        <section class="container">
-            <app-products-grid />
-        </section>
-        <app-footer />
+        <AppHeader />
+        <AppHomepage />
+        <AppFooter />
     </div>
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader.vue';
-import AppProductsGrid from '~/components/modules/AppProducts/AppProductsGrid';
-import AppFooter from '~/components/AppFooter.vue';
+import AppHeader from '~/components/AppHeader';
+import AppHomepage from '~/components/modules/AppHomepage/AppHomepage';
+import AppFooter from '~/components/AppFooter';
 
 export default {
     components: {
         AppHeader,
-        AppProductsGrid,
+        AppHomepage,
         AppFooter,
     }
 };

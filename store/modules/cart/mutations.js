@@ -12,4 +12,7 @@ export default {
     [types.CART_ADD_ITEM](state, item) {
         state.items.push(item);
     },
+    [types.CART_REMOVE_ITEM](state, item) {
+        state.items.push(item);
+    },
 };
