@@ -15,4 +15,7 @@ export default {
     [types.CART_UPDATE_ITEM](state, item) {
         state.items = items;
     },
+    [types.CART_REMOVE_ITEM](state, item) {
+        state.items = items;
+    },
 };

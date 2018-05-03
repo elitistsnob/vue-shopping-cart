@@ -4,20 +4,16 @@ export default {
     addItem({commit}, payload) {
         commit(types.CART_ADD_ITEM, payload);
     },
+    updateCart() {
+        commit(types.CART_UPDATE_ITEM, payload);
+    },
     removeFromCart() {
-        // commit(types.CART_REMOVE_ITEM, payload);
+        commit(types.CART_REMOVE_ITEM, payload);
     },
-    qtyIncrement() {
+    incrementQty() {
+        item.commit('qty');
+    },
+    decrementQty() {
         // Do stuff
     },
-    qtyDecrement() {
-        // Do stuff
-    },
-    checkout() {
-        // Do stuff
-    },
-    
-    // increment (context) {
-    //     context.commit('increment')
-    // }
 };

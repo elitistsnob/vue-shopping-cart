@@ -92,14 +92,15 @@ export default {
     }
 
     .site-header {
-        border-bottom: 1px solid #eee;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+        // border-bottom: 1px solid #eee;
+        // box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
         position: relative;
         text-align: center;
     }
 
     .site-nav {
         // background: #F62B0A;
+        background: #eee;
         color: #fff;
 
         ul {
@@ -121,7 +122,7 @@ export default {
             display: block;
             font-size: 16px;
             font-weight: 900;
-            padding: 5px 35px 15px;
+            padding: 15px 35px 15px;
             text-decoration: none;
             text-transform: uppercase;
             transition: color .1s ease;
@@ -135,7 +136,7 @@ export default {
 
     .site-logo {
         display: inline-block;
-        padding: 10px 15px 5px;
+        padding: 5px 15px 0;
         text-align: center;
 
         svg {
@@ -144,7 +145,12 @@ export default {
             /* height: 160px; */
             margin: 0 auto;
             transition: fill .1s ease;
-            width: 160px;
+            // width: 160px;
+            width: 190px;
+
+            @media all and (max-width: 480px) {
+                width: 140px;
+            }
 
             .guitar {
                 fill: #ccc;

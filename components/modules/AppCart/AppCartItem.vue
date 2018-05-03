@@ -35,7 +35,7 @@ import currencyFormat from '~/assets/js/currencyFormat';
     },
     methods: {
         ...mapActions({
-            removeFromCart: 'cart/removeItem',
+            removeFromCart: 'cart/updateItem',
         }),
     },    
     filters: {

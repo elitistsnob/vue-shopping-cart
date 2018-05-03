@@ -9,17 +9,19 @@
             <div class="site-nav"><app-nav /></div>
         </header>
 
-        <section class="promo">
-            <div class="inner">
-                <h1 v-if="$nuxt.$route.name == 'shop'">Shop Guitars</h1>
-                <h1 v-if="$nuxt.$route.name == 'tips'">Tips &amp; Tricks</h1>
-                <h1 v-if="$nuxt.$route.name == 'locate'">Find a dealer</h1>
-                <h1 v-if="$nuxt.$route.name == 'support'">Support</h1>
-                <h1 v-if="$nuxt.$route.name == 'cart'">Your Cart </h1>
-                <h1 v-if="$nuxt.$route.name == 'index'">Welcome</h1>
-            </div>
-        </section>
-   
+        <div v-if="$nuxt.$route.path === '/'"></div>
+        <div v-else>
+            <section class="promo">
+                <div class="inner">
+                    <h1 v-if="$nuxt.$route.name == 'shop'">Shop Guitars</h1>
+                    <h1 v-if="$nuxt.$route.name == 'tips'">Tips &amp; Tricks</h1>
+                    <h1 v-if="$nuxt.$route.name == 'locate'">Find a dealer</h1>
+                    <h1 v-if="$nuxt.$route.name == 'support'">Support</h1>
+                    <h1 v-if="$nuxt.$route.name == 'cart'">Your Cart </h1>
+                    <h1 v-if="$nuxt.$route.name == 'index'">Welcome</h1>
+                </div>
+            </section>
+        </div>
     </div>  
 </template>
 

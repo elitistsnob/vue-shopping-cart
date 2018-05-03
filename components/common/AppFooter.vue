@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import AppLogo from "~/components/common/AppLogo.vue";
-import AppNav from "~/components/common/AppNav.vue";
+import AppLogo from "~/components/common/AppLogo";
+import AppNav from "~/components/common/AppNav";
 
 export default {
     components: {
@@ -66,7 +66,7 @@ export default {
         color: #999;
         font-size: 13px;
         font-weight: 600;
-        padding: 2em 0;
+        padding: 2em 1em;
     }
 
     .site-footer-topper {
@@ -194,6 +194,10 @@ export default {
             fill: #000 !important;
             height: 170px;
             width: 200px;
+
+            @media all and (max-width: 480px) {
+                width: 160px;
+            }
         }
     }
 
