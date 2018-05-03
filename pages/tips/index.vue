@@ -1,6 +1,5 @@
 <template>
     <div class="site-wrapper">
-       <app-header />
         <section class="container interior--page">
             <p>
             Bacon ipsum dolor amet doner meatball pork rump shoulder. Meatloaf corned beef leberkas, andouille ball tip pork chop pig venison swine fatback. Capicola brisket burgdoggen pancetta venison boudin porchetta shoulder turkey shankle. Pancetta porchetta corned beef burgdoggen, ball tip strip steak salami swine filet mignon spare ribs boudin. Swine ham biltong filet mignon pastrami rump, beef ribs leberkas. Burgdoggen frankfurter flank turkey ball tip pork alcatra meatball ham boudin kevin shank hamburger shoulder.
@@ -20,20 +19,11 @@
             <br>
             <br>
         </section>
-        <app-footer />
     </div>
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader.vue';
-import AppFooter from '~/components/AppFooter.vue';
 
-export default {
-    components: {
-        AppHeader,
-        AppFooter,
-    }
-};
 </script>
 
 <style rel="stylesheet/scss" lang="scss" type="text/scss">

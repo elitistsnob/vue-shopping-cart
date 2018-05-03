@@ -5,6 +5,8 @@
 */
 
 export default () => ({
+    version: '',
+    count: 0,
     items: [
         { 
             itemid: 'SECU24RW', 

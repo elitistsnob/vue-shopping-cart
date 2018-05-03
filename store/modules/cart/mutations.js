@@ -13,6 +13,22 @@ export default {
         state.items.push(item);
     },
     [types.CART_REMOVE_ITEM](state, item) {
-        state.items.push(item);
+        state.items.remove(item);
     },
+    initialiseStore(state) {
+        // Check if the store exists
+        if(localStorage.getItem('store')) {
+            let store = JSON.parse(localStorage.getItem('store'));
+            
+            // Check the version stored against current. If different, don't
+            // load the cached version
+            if(store.version == version) {
+                this.replaceState(
+                    Object.assign(state, store)
+                );
+            } else {
+                state.version = version;
+            }
+        }
+    }
 };

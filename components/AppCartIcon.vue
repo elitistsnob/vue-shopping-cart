@@ -7,7 +7,7 @@
 
 <style rel="stylesheet/scss" lang="scss" type="text/scss">
 .cart-icon-items {
-    background: red;
+    background: #EB0C08;
     border-radius: 67%;
     color: #fff;
     font-size: 12px;

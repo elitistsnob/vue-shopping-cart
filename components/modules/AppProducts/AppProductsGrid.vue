@@ -72,7 +72,13 @@
                         thumb: 'https://media.sweetwater.com/images/items/750/StratCV50SB-large.jpg',
                         price: 399.00,
                     },
-                ]
+                ],
+
+            }
+        },
+        methods: {
+            beforeCreate() {
+                this.$store.commit('initialiseStore');
             }
         },
     }

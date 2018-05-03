@@ -1,8 +1,22 @@
 <template>
     <div id="app">
+        <AppHeader />
         <nuxt/>
+        <AppFooter />
     </div>
 </template>
+
+<script>
+import AppHeader from '~/components/AppHeader';
+import AppFooter from '~/components/AppFooter';
+
+export default {
+    components: {
+        AppHeader,
+        AppFooter,
+    }
+};
+</script>
 
 <style rel="stylesheet/scss" lang="scss" type="text/scss">
     // @import '/assets/css/styles.scss';
@@ -239,7 +253,7 @@
         width: 60px;
 
         &:hover svg {
-            fill: #F62B0A !important;
+            fill: #EB0C08 !important;
         }
 
         svg {
@@ -248,7 +262,7 @@
             width: 50px;
 
             &:hover {
-                fill: #F62B0A !important;
+                fill: #EB0C08 !important;
             }
         }
     }

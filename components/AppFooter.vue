@@ -5,9 +5,6 @@
             <a href="" class="btn">Tell me why!</a>
         </section>
         <div class="inner">
-            <!-- <div class="footer-logo">
-                <app-site-logo />
-            </div> -->
             <div class="nav-column">
                 <h4>Resources</h4>
                 <app-nav />

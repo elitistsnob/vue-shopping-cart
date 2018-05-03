@@ -1,24 +1,18 @@
 <template>
     <div class="site-wrapper">
-       <app-header />
         <section class="container">
             <app-cart />
         </section>
-        <app-footer />
     </div>
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader.vue';
 import AppProductsGrid from '~/components/modules/AppProducts/AppProductsGrid';
 import AppCart from '~/components/modules/AppCart/AppCart';
-import AppFooter from '~/components/AppFooter.vue';
 
 export default {
     components: {
-        AppHeader,
         AppProductsGrid,
-        AppFooter,
         AppCart,
     }
 };
