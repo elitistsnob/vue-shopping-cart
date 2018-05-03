@@ -8,6 +8,9 @@
 <script>
     import {mapState, mapGetters} from 'vuex';
     import AppProductsItem from '~/components/modules/AppProducts/AppProductsItem.vue';
+    import VuePersist from 'vue-persist';
+ 
+    // Vue.use(VuePersist);
     
     export default  {
         components: {
@@ -22,6 +25,7 @@
                         status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/SECU24RW-large.jpg',
                         price: 200.95,
+                        qty: 1,
                     },
                     { 
                         itemid: 'LPTR18FHNH', 
@@ -29,6 +33,7 @@
                         status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/LPTR18FHNH-large.jpg',
                         price: 80.00,
+                        qty: 1,
                     },
                     { 
                         itemid: 'SGS18HCCH', 
@@ -36,6 +41,7 @@
                         status: 'sold',
                         thumb: 'https://media.sweetwater.com/images/items/750/SGS18HCCH-large.jpg',
                         price: 200.50,
+                        qty: 1,
                     },
                     { 
                         itemid: 'TeleCPBjBl', 
@@ -43,6 +49,7 @@
                         status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/TeleCPBjBl-large.jpg',
                         price: '799.75',
+                        qty: 1,
                     },
                     { 
                         itemid: 'LPS18HSCH', 
@@ -50,6 +57,7 @@
                         status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/LPS18HSCH-large.jpg',
                         price: 3299.25,
+                        qty: 1,
                     },
                     { 
                         itemid: 'CE24BLACKOUT', 
@@ -57,6 +65,7 @@
                         status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/CE24BLACKOUT-large.jpg',
                         price: 1899.00,
+                        qty: 1,
                     },
                     { 
                         itemid: 'StratSBR3TSB', 
@@ -64,6 +73,7 @@
                         status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/StratSBR3TSB-large.jpg',
                         price: 1899.00,
+                        qty: 1,
                     },
                     { 
                         itemid: 'StratCV50SB', 
@@ -71,6 +81,7 @@
                         status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/StratCV50SB-large.jpg',
                         price: 399.00,
+                        qty: 1,
                     },
                 ],
 
@@ -81,6 +92,7 @@
                 this.$store.commit('initialiseStore');
             }
         },
+        persist: ['itemid'],
     }
 </script>
 

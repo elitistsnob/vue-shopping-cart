@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {mapState, mapGetters} from 'vuex';
+import {mapState, mapGetters, mapActions} from 'vuex';
 import AppCartItem from '~/components/modules/AppCart/AppCartItem';
 
 export default {
@@ -17,6 +17,11 @@ export default {
             items: state => state.cart.items,
         }),
         // cartItems() { return this.$store.getters.cartItems; },
+    },
+    methods: {
+        ...mapActions({
+            removeItemFromCart: 'cart/removeItem',
+        }),
     }
 };
 </script>

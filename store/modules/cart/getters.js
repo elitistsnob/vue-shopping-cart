@@ -1,3 +1,3 @@
 export default {
-    cartItems: state => state.cartItems,
+    cartItems: state => state.items,
 };

@@ -11,7 +11,7 @@
         <div class="app-cart-grid-item-qty">
             <input type="number" value="1">
             <div class="qty-controls">
-                <span class="" @click="removeFromCart(item)">Remove</span>
+                <span class="" @click="removeFromCart(item.itemid)">Remove</span>
             </div>
             
         </div>

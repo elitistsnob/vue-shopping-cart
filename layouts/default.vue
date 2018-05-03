@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader';
-import AppFooter from '~/components/AppFooter';
+import AppHeader from '~/components/common/AppHeader';
+import AppFooter from '~/components/common/AppFooter';
 
 export default {
     components: {
@@ -23,8 +23,6 @@ export default {
     /*---------------------------------------------
         HEADER 
     ---------------------------------------------*/
-
-
     html {
         font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-size: 16px;

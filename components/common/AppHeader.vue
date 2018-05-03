@@ -26,9 +26,9 @@
 <script>
             
 import {mapState} from 'vuex';
-import AppLogo from "~/components/AppLogo";
-import AppNav from "~/components/AppNav";
-import AppCartIcon from "~/components/AppCartIcon";
+import AppLogo from "~/components/common/AppLogo";
+import AppNav from "~/components/common/AppNav";
+import AppCartIcon from "~/components/common/AppCartIcon";
 
 export default {
     components: {

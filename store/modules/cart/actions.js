@@ -5,7 +5,7 @@ export default {
         commit(types.CART_ADD_ITEM, payload);
     },
     removeFromCart() {
-        commit(types.CART_REMOVE_ITEM, payload);
+        // commit(types.CART_REMOVE_ITEM, payload);
     },
     qtyIncrement() {
         // Do stuff

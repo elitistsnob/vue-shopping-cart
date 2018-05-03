@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
-import AppNav from "~/components/AppNav.vue";
+import AppLogo from "~/components/common/AppLogo.vue";
+import AppNav from "~/components/common/AppNav.vue";
 
 export default {
     components: {
