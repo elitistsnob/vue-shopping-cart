@@ -1,7 +1,7 @@
 
 <template>
     <div class="products">
-        <AppProductsItem v-for="product in products" :key="product.itemid" :product="product"/>
+        <AppProductsItem v-for="item in items" :key="item.itemid" :product="item"/>
     </div>
 </template>
 
@@ -18,7 +18,7 @@
         },
         data() {
             return  {
-                products: [
+                items: [
                     { 
                         itemid: 'SECU24RW', 
                         title: 'PRS SE Custom 24 Sweetwater Exclusive - Natural Rosewood',
@@ -38,10 +38,10 @@
                     { 
                         itemid: 'SGS18HCCH', 
                         title: 'Gibson SG Standard 2018 - Heritage Cherry',
-                        status: 'sold',
+                        status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/SGS18HCCH-large.jpg',
                         price: 200.50,
-                        qty: 1,
+                        qty: 0,
                     },
                     { 
                         itemid: 'TeleCPBjBl', 
@@ -81,6 +81,23 @@
                         status: 'in-stock',
                         thumb: 'https://media.sweetwater.com/images/items/750/StratCV50SB-large.jpg',
                         price: 399.00,
+                        qty: 1,
+                    },
+
+                    { 
+                        itemid: 'PBassVMILPB', 
+                        title: 'Squier Vintage Modified Precision Bass PJ',
+                        status: 'in-stock',
+                        thumb: 'https://media.sweetwater.com/images/items/750/PBassVMILPB-large.jpg',
+                        price: 299.99,
+                        qty: 1,
+                    },
+                    { 
+                        itemid: 'L4402RTTSdns', 
+                        title: 'Lakland Skyline 44-02 Standard "Dent and Scratch"',
+                        status: 'in-stock',
+                        thumb: 'https://media.sweetwater.com/images/items/750/L4402RTTSdns-large.jpg',
+                        price: 998.00,
                         qty: 1,
                     },
                 ],

@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex';
+import {mapState, mapActions, mapGetters} from 'vuex';
 import currencyFormat from '~/assets/js/currencyFormat'; 
 
  export default {
@@ -35,7 +35,7 @@ import currencyFormat from '~/assets/js/currencyFormat';
     },
     methods: {
         ...mapActions({
-            removeFromCart: 'cart/updateItem',
+            removeFromCart: 'cart/removeItem',
         }),
     },    
     filters: {

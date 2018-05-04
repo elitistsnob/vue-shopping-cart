@@ -1,6 +1,6 @@
 <template>
     <div class="product">
-        <div v-if="product.status == 'sold'" class="badge sold">SOLD</div>
+        <div v-if="product.status == 'sold' || product.qty == 0" class="badge sold">SOLD</div>
         <div class="product-thumb">
             <div class="flex-fix">
             <!-- <div class="product-thumb" :style="{background: `url(https://media.sweetwater.com/images/items/750/${ product.itemid }-large.jpg) no-repeat scroll center center/78% 85%`}"> -->
@@ -12,7 +12,7 @@
         </div>
         <p class="product-price">${{ product.price }}</p>
         <p class="product-button">
-            <a href="" v-if="product.status == 'in-stock'" class="btn btn--add-to-cart" @click.prevent="addToCart(product)">Add to Cart</a>
+            <a href="" v-if="product.status == 'in-stock' && product.qty != 0" class="btn btn--add-to-cart" @click.prevent="addToCart(product)">Add to Cart</a>
         </p>
     </div>
 </template>
@@ -30,7 +30,6 @@
         methods: {
             ...mapActions({
                 addToCart: 'cart/addItem',
-                removeFromCart: 'cart/removeItem',
             }),
         },  
     }
