@@ -43,6 +43,13 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" type="text/scss">
 .site-header {
+    .site-header {
+        // border-bottom: 1px solid #eee;
+        // box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+        position: relative;
+        text-align: center;
+    }
+
 
     @media all and (max-width: 730px) {
         .nav {
