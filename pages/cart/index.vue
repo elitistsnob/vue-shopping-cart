@@ -1,7 +1,7 @@
 <template>
     <div class="site-wrapper">
         <section class="container">
-            <app-cart />
+            <AppCart />
         </section>
     </div>
 </template>

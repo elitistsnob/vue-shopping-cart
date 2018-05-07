@@ -8,9 +8,9 @@
 <script>
     import {mapState, mapGetters} from 'vuex';
     import AppProductsItem from '~/components/modules/AppProducts/AppProductsItem.vue';
-    import VuePersist from 'vue-persist';
+    import VuexPersist from 'vuex-persist';
  
-    // Vue.use(VuePersist);
+    // Vue.use(Vuex);
     
     export default  {
         components: {

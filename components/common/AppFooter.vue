@@ -7,7 +7,7 @@
         <div class="inner">
             <div class="nav-column">
                 <h4>Resources</h4>
-                <app-nav />
+                <AppNav />
             </div>
 
             <div class="nav-column">
@@ -32,15 +32,10 @@
             </div>
             
         </div>
-
         <div class="footer-logo">
-            <a href=""><app-logo /></a>
+            <a href=""><AppLogo /></a>
         </div>
-
         <p class="copyright">&copy;{{ new Date().getFullYear() }} Hipster Guitars, Inc. All rights reserved. So don't steal our content or we'll sue you, jerks!</p>
-         
-        
-
     </footer>
 </template>
 

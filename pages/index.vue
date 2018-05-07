@@ -10,6 +10,10 @@ import AppHomepage from '~/components/modules/AppHomepage/AppHomepage';
 export default {
     components: {
         AppHomepage,
+    },
+    props: {
+        headline: 'Shop Guitar Catalog',
+        subhead: 'you want it? We go it!',
     }
 };
 </script>

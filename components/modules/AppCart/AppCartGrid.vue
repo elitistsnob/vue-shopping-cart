@@ -1,6 +1,6 @@
 <template>
     <ul class="app-cart-grid">
-        <app-cart-item v-for="item in items" :key="item.name" :item="item"/>
+        <AppCartItem v-for="item in items" :key="item.name" :item="item"/>
     </ul>
 </template>
 

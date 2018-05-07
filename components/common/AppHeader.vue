@@ -3,16 +3,17 @@
         <div class="site-banner">Welcome to Hipster Guitars. A <span>safe-space</span> for Millenial musicians.</div>
         <header class="site-header">
             <nuxt-link to="/" class="site-logo">
-                <app-logo />
+                <AppLogo />
             </nuxt-link>
-            <nuxt-link to="/cart" class="cart-icon"><app-cart-icon /></nuxt-link>
-            <div class="site-nav"><app-nav /></div>
+            <nuxt-link to="/cart" class="cart-icon"><AppCartIcon /></nuxt-link>
+            <div class="site-nav"><AppNav /></div>
         </header>
 
         <div v-if="$nuxt.$route.path === '/'"></div>
         <div v-else>
             <section class="promo">
                 <div class="inner">
+                    <div v-if="headline">{{ headline }}</div>
                     <h1 v-if="$nuxt.$route.name == 'shop'">Shop Guitars</h1>
                     <h1 v-if="$nuxt.$route.name == 'tips'">Tips &amp; Tricks</h1>
                     <h1 v-if="$nuxt.$route.name == 'locate'">Find a dealer</h1>
@@ -44,12 +45,9 @@ export default {
 <style rel="stylesheet/scss" lang="scss" type="text/scss">
 .site-header {
     .site-header {
-        // border-bottom: 1px solid #eee;
-        // box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
         position: relative;
         text-align: center;
     }
-
 
     @media all and (max-width: 730px) {
         .nav {

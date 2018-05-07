@@ -1,12 +1,12 @@
 <template>
     <div class="app-cart">
         <div v-if="items.length">
-            <app-cart-header />
-            <app-cart-grid />
-            <app-cart-footer />
+            <AppCartHeader />
+            <AppCartGrid />
+            <AppCartFooter />
         </div>
         <div v-else>
-            <app-cart-empty />
+            <AppCartEmpty />
         </div>
     </div>
 </template>

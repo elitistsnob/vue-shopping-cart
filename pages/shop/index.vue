@@ -1,7 +1,7 @@
 <template>
     <div class="site-wrapper">
         <section class="container">
-            <app-products-grid />
+            <AppProductsGrid />
         </section>
     </div>
 </template>
@@ -12,6 +12,10 @@ import AppProductsGrid from '~/components/modules/AppProducts/AppProductsGrid';
 export default {
     components: {
         AppProductsGrid,
+    }, 
+    props: {
+        headline: 'Shop Guitar Catalog',
+        subhead: 'you want it? We go it!',
     }
 };
 </script>

@@ -10,7 +10,7 @@
         </div>
         
         <section class="container">
-            <app-products-grid />
+            <AppProductsGrid />
         </section>
     </div>
 </template>
