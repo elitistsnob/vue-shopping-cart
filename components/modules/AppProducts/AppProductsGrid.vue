@@ -101,11 +101,6 @@
 
             }
         },
-        // methods: {
-        //     beforeCreate() {
-        //         this.$store.commit('initialiseStore');
-        //     }
-        // },
     }
 </script>
 

@@ -23,13 +23,12 @@ import {mapState} from 'vuex';
 
 export default {
     components: {
- 
+
     },
      computed: {
         ...mapState({
             items: state => state.cart.items,
         }),
-        // numInCart() { return this.cart.length; }
     }
 };
 </script>

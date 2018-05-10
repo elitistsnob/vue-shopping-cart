@@ -8,7 +8,7 @@
                 </p>
             </div>
         </div>
-        
+
         <section class="container">
             <AppProductsGrid />
         </section>
@@ -22,7 +22,7 @@ export default  {
     components: {
         AppProductsGrid,
     },
-}        
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss" type="text/scss">

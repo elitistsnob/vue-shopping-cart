@@ -11,19 +11,25 @@
             <h2>{{ product.title }}</h2>
         </div>
         <p class="product-price">
-            <span v-if="product.qty != 0">{{ product.price }}</span>
+            <span v-if="product.qty != 0">{{ product.price | currencyFormat }}</span>
             <span v-else class="out-of-stock">Out of Stock</span>
         </p>
         <p class="product-button">
-            <a href="" v-if="product.status == 'in-stock' && product.qty != 0" class="btn btn--add-to-cart" @click.prevent="addToCart(product)">Add to Cart</a>
+            <a href="" v-if="product.status == 'in-stock' && product.qty != 0" :class="{ active: isActive }" class="btn btn--add-to-cart" @click.prevent="addToCart(product); addedToCart();">Add to Cart</a>
         </p>
     </div>
 </template>
 
 <script>
     import {mapActions, mapGetters} from 'vuex';
+    import currencyFormat from '~/assets/js/currencyFormat';
 
     export default  {
+        data() {
+            return {
+                isActive: false,
+            }
+        },
         props: {
             product: {
                 required: true,
@@ -34,6 +40,12 @@
             ...mapActions({
                 addToCart: 'cart/addItem',
             }),
+            addedToCart: function() {
+                this.isActive = !this.isActive;
+            }
+        },
+        filters: {
+            currencyFormat,
         },
     }
 </script>
@@ -42,14 +54,10 @@
 .product {
     align-items: stretch;
     background: #fff;
-    // border: 1px solid #ccc;
     border-radius: 3px;
     display: flex;
-    align-items: stretch;
     flex-direction: column;
-    // flex-flow: row wrap;
     flex-wrap: nowrap;
-    // flex: 1 1 auto;
     margin: 5px;
     overflow: hidden;
     padding: 0 0 25px 0;
@@ -97,12 +105,11 @@
     }
 
     .product-thumb {
-        // align-items: center;
         display: flex;
-        // flex: 1 1 auto;
-        margin: 0;
+        margin: 0 auto;
         padding: 15px 15px 0 15px;
         position: relative;
+        width: 75%;
 
         .flex-fix {
             height: auto;
@@ -124,10 +131,14 @@
 
     .product-button {
         display: flex;
-        // flex: 1;
         justify-content: center;
         margin: 0;
         margin-top: 10px;
+
+        .btn--add-to-cart.active {
+            background: green;
+            cursor: not-allowed;
+        }
     }
 
     .badge {
