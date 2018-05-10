@@ -19,6 +19,7 @@
 		"vue-persist": "^0.4.0",
 		"vue-style-loader": "^4.1.0",
 		"vuex-persist": "^1.2.2",
+		"vuex-persistedstate": "^2.5.2",
 		"webpack": "^4.6.0"
 	},
 	"devDependencies": {

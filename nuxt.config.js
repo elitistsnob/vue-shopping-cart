@@ -10,12 +10,12 @@ module.exports = {
 			{ hid: "description", name: "description", content: "Nuxt.js project" }
 		],
 		link: [
-			{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }, 
+			{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
 			{href:"https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700", rel:"stylesheet"},
 			{href:"https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800,900", rel:"stylesheet"}
 		]
 	},
-
+	plugins: [{ src: '~/plugins/localStorage.js', ssr: false }],
 	/*
 	** Customize the progress bar color
 	*/

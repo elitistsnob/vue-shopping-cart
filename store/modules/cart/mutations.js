@@ -15,7 +15,8 @@ export default {
     [types.CART_UPDATE_ITEM](state, item) {
         state.items = items;
     },
-    [types.CART_REMOVE_ITEM](state, item) {
-        state.items = items;
+    [types.REMOVE_FROM_CART](state, index) {
+        state.items.splice(index, 1);
     },
+
 };

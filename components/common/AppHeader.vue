@@ -13,7 +13,6 @@
         <div v-else>
             <section class="promo">
                 <div class="inner">
-                    <div v-if="headline">{{ headline }}</div>
                     <h1 v-if="$nuxt.$route.name == 'shop'">Shop Guitars</h1>
                     <h1 v-if="$nuxt.$route.name == 'tips'">Tips &amp; Tricks</h1>
                     <h1 v-if="$nuxt.$route.name == 'locate'">Find a dealer</h1>
@@ -23,11 +22,11 @@
                 </div>
             </section>
         </div>
-    </div>  
+    </div>
 </template>
 
 <script>
-            
+
 import {mapState} from 'vuex';
 import AppLogo from "~/components/common/AppLogo";
 import AppNav from "~/components/common/AppNav";

@@ -10,7 +10,10 @@
         <div class="product-name">
             <h2>{{ product.title }}</h2>
         </div>
-        <p class="product-price">${{ product.price }}</p>
+        <p class="product-price">
+            <span v-if="product.qty != 0">{{ product.price }}</span>
+            <span v-else class="out-of-stock">Out of Stock</span>
+        </p>
         <p class="product-button">
             <a href="" v-if="product.status == 'in-stock' && product.qty != 0" class="btn btn--add-to-cart" @click.prevent="addToCart(product)">Add to Cart</a>
         </p>
@@ -31,7 +34,7 @@
             ...mapActions({
                 addToCart: 'cart/addItem',
             }),
-        },  
+        },
     }
 </script>
 
@@ -44,7 +47,7 @@
     display: flex;
     align-items: stretch;
     flex-direction: column;
-    // flex-flow: row wrap; 
+    // flex-flow: row wrap;
     flex-wrap: nowrap;
     // flex: 1 1 auto;
     margin: 5px;
@@ -84,6 +87,13 @@
         flex: 1 1 auto;
         margin: 0;
         padding: 5px;
+
+        .out-of-stock {
+            display: block;
+            font-size: .7em;
+            text-align: center;
+            text-transform: uppercase;
+        }
     }
 
     .product-thumb {
@@ -108,7 +118,7 @@
             position: absolute;
                 left: 0;
                 top: 0;
-            width: 100%;  
+            width: 100%;
         }
     }
 

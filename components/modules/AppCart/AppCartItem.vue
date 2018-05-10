@@ -11,9 +11,9 @@
         <div class="app-cart-grid-item-qty">
             <input type="number" value="1">
             <div class="qty-controls">
-                <span class="" @click="removeFromCart(item.itemid)">Remove</span>
+                <span class="" @click="removeFromCart(item.id)">Remove</span>
             </div>
-            
+
         </div>
 
         <div class="app-cart-grid-item-total">
@@ -24,7 +24,7 @@
 
 <script>
 import {mapState, mapActions, mapGetters} from 'vuex';
-import currencyFormat from '~/assets/js/currencyFormat'; 
+import currencyFormat from '~/assets/js/currencyFormat';
 
  export default {
     props: {
@@ -35,9 +35,9 @@ import currencyFormat from '~/assets/js/currencyFormat';
     },
     methods: {
         ...mapActions({
-            removeFromCart: 'cart/removeItem',
+            removeFromCart: 'cart/removeFromCart',
         }),
-    },    
+    },
     filters: {
         currencyFormat,
     },
