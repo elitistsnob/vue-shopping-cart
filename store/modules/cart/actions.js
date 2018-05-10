@@ -15,5 +15,5 @@ export default {
     },
     removeFromCart({commit}, payload) {
         commit(types.REMOVE_FROM_CART, payload);
-      },
+    },
 };

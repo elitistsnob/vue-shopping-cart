@@ -16,13 +16,10 @@ export default {
         ...mapState({
             items: state => state.cart.items,
         }),
-        // cartItems() { return this.$store.getters.cartItems; },
     },
     methods: {
-        ...mapActions({
-            removeItemFromCart: 'cart/removeItem',
-        }),
-    }
+
+    },
 };
 </script>
 

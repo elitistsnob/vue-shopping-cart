@@ -15,8 +15,7 @@ export default {
     [types.CART_UPDATE_ITEM](state, item) {
         state.items = items;
     },
-    [types.REMOVE_FROM_CART](state, index) {
-        state.items.splice(index, 1);
+    [types.REMOVE_FROM_CART](state, selectedItem) {
+        state.items = state.items.filter(item => item.itemid !== selectedItem.itemid);
     },
-
 };
