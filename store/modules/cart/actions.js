@@ -13,7 +13,8 @@ export default {
     decrementQty() {
         // Do stuff
     },
-    removeFromCart({commit}, payload) {
-        commit(types.REMOVE_FROM_CART, payload);
+    removeFromCart({commit, state}, selectedItem) {
+        const items = state.items.filter(item => item.itemid !== selectedItem.itemid);
+        commit(types.CART_UPDATE_ITEMS, items);
     },
 };

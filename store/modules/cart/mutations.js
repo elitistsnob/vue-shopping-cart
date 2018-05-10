@@ -12,10 +12,10 @@ export default {
     [types.CART_ADD_ITEM](state, item) {
         state.items.push(item);
     },
-    [types.CART_UPDATE_ITEM](state, item) {
+    [types.CART_UPDATE_ITEMS](state, items) {
         state.items = items;
     },
-    [types.REMOVE_FROM_CART](state, selectedItem) {
-        state.items = state.items.filter(item => item.itemid !== selectedItem.itemid);
-    },
+    // [types.REMOVE_FROM_CART](state, selectedItem) {
+    //     // state.items = state.items.filter(item => item.itemid !== selectedItem.itemid);
+    // },
 };

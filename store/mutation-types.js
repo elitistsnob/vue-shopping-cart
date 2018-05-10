@@ -8,5 +8,5 @@ export const NAMESPACE_UPDATE_SOMETHING = `${SN_NAMESPACE}/UPD_SOMETHING`;
 
 export const SN_CART = 'cart';
 export const CART_ADD_ITEM = `${SN_CART}/ADD_ITEM`;
-export const CART_UPDATE_ITEM = `${SN_CART}/UPDATE_ITEM`;
+export const CART_UPDATE_ITEMS = `${SN_CART}/UPDATE_ITEMS`;
 export const REMOVE_FROM_CART = `${SN_CART}/REMOVE`;
