@@ -11,9 +11,8 @@
     </div>
 </template>
 
-
 <script>
-import {mapState} from 'vuex';
+import {mapState, mapActions, mapGetters} from 'vuex';
 import AppCartHeader from '~/components/modules/AppCart/AppCartHeader';
 import AppCartGrid from '~/components/modules/AppCart/AppCartGrid';
 import AppCartEmpty from '~/components/modules/AppCart/AppCartEmpty';
@@ -57,5 +56,12 @@ export default {
             width: 160px;
         }
     }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

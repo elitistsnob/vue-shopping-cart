@@ -8,7 +8,6 @@
                 </p>
             </div>
         </div>
-
         <section class="container">
             <AppProductsGrid />
         </section>
@@ -26,12 +25,7 @@ export default  {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" type="text/scss">
-// .promo {
-//     display: none;
-// }
-
 .sale-message {
-    // background: #333;
     background: #333 url('https://i.pinimg.com/originals/f6/4a/b9/f64ab9ebb6019247f53b0409d511443c.jpg') no-repeat fixed center center/cover;
     color: #fff;
     padding: 2em;

@@ -1,10 +1,8 @@
 <template>
-    <div>
-        <div class="empty-cart">
-
-            <div class="face-icon">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 211.077 211.077" style="enable-background:new 0 0 211.077 211.077;" xml:space="preserve">
+    <div class="empty-cart">
+        <div class="face-icon">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 211.077 211.077" style="enable-background:new 0 0 211.077 211.077;" xml:space="preserve">
                 <path d="M105.304,211.077c-37.511,0-68.028-30.517-68.028-68.027v-0.987h-1.321c-11.568,0-20.979-9.411-20.979-20.979v-9.606
                     c0-11.567,9.411-20.979,20.979-20.979h1.321V59.58c0-11.914,5.542-23.236,14.896-30.578c-0.317-1.571-0.483-3.188-0.483-4.83
                     c0-4.318,2.3-8.755,6.153-11.867c0.039-0.031,0.078-0.062,0.118-0.09l2.333-1.666c0.083-0.06,0.169-0.113,0.258-0.162
@@ -55,11 +53,8 @@
                     l29.442,9.604c1.313,0.429,2.03,1.84,1.602,3.152C149.833,98.331,148.854,99.002,147.801,99.002z M63.394,99.002
                     c-1.053,0-2.032-0.671-2.376-1.726c-0.428-1.313,0.289-2.724,1.602-3.152l29.442-9.604c1.312-0.429,2.724,0.29,3.152,1.602
                     c0.428,1.313-0.289,2.724-1.602,3.152L64.17,98.878C63.912,98.962,63.651,99.002,63.394,99.002z"/>
-                </svg>
-            </div>
-            
-            <p> Your cart is empty and sad. Add some items to it, and make it happy again.</p>
-
+            </svg>
         </div>
+        <p> Your cart is empty and sad. Add some items to it, and make it happy again.</p>
     </div>
 </template>

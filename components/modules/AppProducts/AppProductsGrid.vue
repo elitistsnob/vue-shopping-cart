@@ -1,4 +1,3 @@
-
 <template>
     <div class="products">
         <AppProductsItem v-for="item in items" :key="item.itemid" :product="item"/>
@@ -20,6 +19,7 @@
                         itemid: 'SECU24RW',
                         title: 'PRS SE Custom 24 Sweetwater Exclusive - Natural Rosewood',
                         status: 'in-stock',
+                        inventory: 400,
                         thumb: 'https://media.sweetwater.com/images/items/750/SECU24RW-large.jpg',
                         price: 200.95,
                         qty: 1,
@@ -28,6 +28,7 @@
                         itemid: 'LPTR18FHNH',
                         title: 'Gibson Les Paul Tribute 2018 - Faded Honey Burst',
                         status: 'in-stock',
+                        inventory: 100,
                         thumb: 'https://media.sweetwater.com/images/items/750/LPTR18FHNH-large.jpg',
                         price: 80.00,
                         qty: 1,
@@ -35,7 +36,8 @@
                     {
                         itemid: 'SGS18HCCH',
                         title: 'Gibson SG Standard 2018 - Heritage Cherry',
-                        status: 'in-stock',
+                        status: 'sold',
+                        stock: 0,
                         thumb: 'https://media.sweetwater.com/images/items/750/SGS18HCCH-large.jpg',
                         price: 200.50,
                         qty: 0,
@@ -44,6 +46,7 @@
                         itemid: 'TeleCPBjBl',
                         title: 'Fender Classic Player Baja Telecaster - Blonde with Maple Fingerboard',
                         status: 'in-stock',
+                        inventory: 5,
                         thumb: 'https://media.sweetwater.com/images/items/750/TeleCPBjBl-large.jpg',
                         price: '799.75',
                         qty: 1,
@@ -52,6 +55,7 @@
                         itemid: 'LPS18HSCH',
                         title: 'Gibson Les Paul Standard 2018 - Heritage Cherry Sunburst',
                         status: 'in-stock',
+                        inventory: 2,
                         thumb: 'https://media.sweetwater.com/images/items/750/LPS18HSCH-large.jpg',
                         price: 3299.25,
                         qty: 1,
@@ -60,6 +64,7 @@
                         itemid: 'CE24BLACKOUT',
                         title: 'PRS CE 24 Sweetwater Exclusive - Satin Blackout',
                         status: 'in-stock',
+                        inventory: 1,
                         thumb: 'https://media.sweetwater.com/images/items/750/CE24BLACKOUT-large.jpg',
                         price: 1899.00,
                         qty: 1,
@@ -68,6 +73,7 @@
                         itemid: 'StratSBR3TSB',
                         title: 'Fender Sandblasted Stratocaster, Sweetwater USA Exclusive',
                         status: 'in-stock',
+                        inventory: 400,
                         thumb: 'https://media.sweetwater.com/images/items/750/StratSBR3TSB-large.jpg',
                         price: 1899.00,
                         qty: 1,
@@ -76,15 +82,16 @@
                         itemid: 'StratCV50SB',
                         title: 'Squier Classic Vibe Stratocaster \'50s - 2-tone Sunburst',
                         status: 'in-stock',
+                        inventory: 20,
                         thumb: 'https://media.sweetwater.com/images/items/750/StratCV50SB-large.jpg',
                         price: 399.00,
                         qty: 1,
                     },
-
                     {
                         itemid: 'PBassVMILPB',
                         title: 'Squier Vintage Modified Precision Bass PJ',
                         status: 'in-stock',
+                        inventory: 5,
                         thumb: 'https://media.sweetwater.com/images/items/750/PBassVMILPB-large.jpg',
                         price: 299.99,
                         qty: 1,
@@ -93,6 +100,7 @@
                         itemid: 'L4402RTTSdns',
                         title: 'Lakland Skyline 44-02 Standard "Dent and Scratch"',
                         status: 'in-stock',
+                        inventory: 4,
                         thumb: 'https://media.sweetwater.com/images/items/750/L4402RTTSdns-large.jpg',
                         price: 998.00,
                         qty: 1,

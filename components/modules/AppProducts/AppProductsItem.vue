@@ -14,8 +14,13 @@
             <span v-if="product.qty != 0">{{ product.price | currencyFormat }}</span>
             <span v-else class="out-of-stock">Out of Stock</span>
         </p>
+        <p class="product-stock">
+            <span v-if="product.inventory > 0">
+                <span v-if="product.inventory === 1">ONLY </span>{{ product.inventory }} available</span>
+            <span v-else></span>
+        </p>
         <p class="product-button">
-            <a href="" v-if="product.status == 'in-stock' && product.qty != 0" :class="{ active: isActive }" class="btn btn--add-to-cart" @click.prevent="addToCart(product); addedToCart();">Add to Cart</a>
+            <a href="" v-if="product.status == 'in-stock' && product.inventory > 0" :class="{ active: isActive }" class="btn btn--add-to-cart" @click.prevent="addToCart(product); addedToCart();">Add to Cart <span class="btn-qty">{{ product.qty }}</span></a>
         </p>
     </div>
 </template>
@@ -74,7 +79,7 @@
         flex: 1 1 auto;
         font-size: 18px;
         justify-content: center;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
         padding: 5px 5px;
 
         h2 {
@@ -83,6 +88,15 @@
             font-weight: 700;
             text-transform: uppercase;
         }
+    }
+
+    .product-stock {
+        color: #888;
+        font-size: 12px;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        text-align: center;
     }
 
     .product-price {
@@ -135,9 +149,30 @@
         margin: 0;
         margin-top: 10px;
 
+        .btn--add-to-cart {
+            position: relative;
+        }
+
         .btn--add-to-cart.active {
             background: green;
             cursor: not-allowed;
+            padding-right: 35px;
+
+            .btn-qty {
+                background: darken(green, 10%);
+                display: block;
+                font-weight: 700;
+            }
+        }
+
+        .btn-qty {
+            background: darken(red, 20%);
+            border-radius: 0 4px 4px 0;
+            display: none;
+            padding: 10px;
+            position: absolute;
+                right: 0;
+                top: 0;
         }
     }
 

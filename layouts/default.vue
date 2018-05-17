@@ -21,7 +21,7 @@ export default {
 <style rel="stylesheet/scss" lang="scss" type="text/scss">
     // @import '/assets/css/styles.scss';
     /*---------------------------------------------
-        HEADER 
+        HEADER
     ---------------------------------------------*/
     html {
         font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -75,6 +75,10 @@ export default {
         font-weight: 900;
         margin-top: 20px;
         text-transform: uppercase;
+    }
+
+    strong {
+        font-weight: 800;
     }
 
     .site-banner {

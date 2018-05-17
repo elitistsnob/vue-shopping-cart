@@ -20,7 +20,7 @@
                         <li><a href="">Order Status</a></li>
                     </ul>
                 </nav>
-                
+
             </div>
 
             <div class="nav-column">
@@ -30,7 +30,7 @@
                     <input type="submit" value="Subscribe">
                 </div>
             </div>
-            
+
         </div>
         <div class="footer-logo">
             <a href=""><AppLogo /></a>
@@ -178,10 +178,10 @@ export default {
     .footer-logo {
         a {
             display: inline-block;
-            opacity: .35;
+            opacity: .55;
 
              &:hover {
-                opacity: .5;        
+                opacity: .5;
             }
         }
 
@@ -232,7 +232,7 @@ export default {
 
             &:hover {
                 background: darken(#333, 10%);
-            }    
+            }
         }
     }
 }
