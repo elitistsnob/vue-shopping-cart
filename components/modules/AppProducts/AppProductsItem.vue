@@ -1,6 +1,6 @@
 <template>
-    <div class="product">
-        <div v-if="product.status == 'sold' || product.qty == 0" class="badge sold">SOLD</div>
+    <div class="product" :class="{ selected : inCart }">
+        <div v-if="product.status == 'sold' || product.inventory === 0" class="badge sold">SOLD</div>
         <div class="product-thumb">
             <div class="flex-fix">
             <!-- <div class="product-thumb" :style="{background: `url(https://media.sweetwater.com/images/items/750/${ product.itemid }-large.jpg) no-repeat scroll center center/78% 85%`}"> -->
@@ -11,7 +11,7 @@
             <h2>{{ product.title }}</h2>
         </div>
         <p class="product-price">
-            <span v-if="product.qty != 0">{{ product.price | currencyFormat }}</span>
+            <span v-if="product.inventory > 0">{{ product.price | currencyFormat }}</span>
             <span v-else class="out-of-stock">Out of Stock</span>
         </p>
         <p class="product-stock">
@@ -21,20 +21,23 @@
             <span v-else></span>
         </p>
         <p class="product-button">
-            <a href="" v-if="product.status == 'in-stock' && product.inventory > 0" :class="{ active: isActive }" class="btn btn--add-to-cart" @click.prevent="addToCart(product); addedToCart();">Add to Cart <span class="btn-qty">{{ getItemQty }}</span></a>
+            <a href="" v-if="product.status == 'in-stock' && product.inventory > 0" :class="className" class="btn btn--add-to-cart" @click.prevent="addToCart(product); requestSelected(); classActive(); changeInventory(product); incrementQty()">{{ buttonText }} <span class="btn-qty">{{ product.itemQty }}</span></a>
         </p>
     </div>
 </template>
 
 <script>
-    import {mapActions, mapGetters} from 'vuex';
+    import {mapActions, mapGetters, mapState} from 'vuex';
     import currencyFormat from '~/assets/js/currencyFormat';
 
     export default  {
         data() {
             return {
                 isActive: false,
-                message: 'Hello',
+                message: '',
+                buttonText: 'Add To Cart',
+                className: '',
+                currentQty: 0,
             }
         },
         props: {
@@ -46,14 +49,33 @@
         computed: {
             ...mapGetters({
                 getItemQty: 'shop/getItemQty',
+                // getInventory: 'shop/getInventory',
             }),
+            ...mapState({
+                // items: state => state.cart.items,
+                // products: state => state.shop.items,
+            }),
+            inCart() {
+                return this.product.itemQty > 0
+                // alert(this.product.itemQty)
+            }
         },
         methods: {
             ...mapActions({
                 addToCart: 'cart/addItem',
+                changeInventory: 'shop/changeInventory',
             }),
-            addedToCart: function() {
-                this.isActive = !this.isActive;
+            // addedToCart() {
+            //     this.isActive = !this.isActive;
+            // },
+            requestSelected() {
+                this.buttonText = 'Added';
+            },
+            classActive() {
+                this.className = 'active';
+            },
+            incrementQty() {
+                this.currentQty++;
             }
         },
         filters: {
@@ -63,6 +85,18 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" type="text/scss" scoped>
+.selected .btn--add-to-cart {
+    background: green;
+    padding-right: 55px;
+
+    .btn-qty {
+        background: darken(green, 10%) !important;
+        display: block !important;
+        font-weight: 700;
+    }
+
+}
+
 .product {
     align-items: stretch;
     background: #fff;
@@ -160,16 +194,16 @@
             position: relative;
         }
 
-        .btn--add-to-cart.active {
-            background: green;
-            padding-right: 35px;
+        // .btn--add-to-cart.active {
+        //     background: green;
+        //     padding-right: 55px;
 
-            .btn-qty {
-                background: darken(green, 10%);
-                display: block;
-                font-weight: 700;
-            }
-        }
+        //     .btn-qty {
+        //         background: darken(green, 10%);
+        //         display: block;
+        //         font-weight: 700;
+        //     }
+        // }
 
         .btn-qty {
             background: darken(red, 20%);

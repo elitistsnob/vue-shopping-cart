@@ -13,19 +13,19 @@
                 :max="item.inventory"
                 :min="1"
                 :integerOnly="true"
-                v-model="item.qty"
+                v-model="item.itemQty"
             />
 
             <input type="hidden" @change="qtyChange(itemQty)" name="qty"  :value="qtyChange(itemQty)" :max="item.inventory" min="1">
 
             <div class="qty-controls">
-                <span style="font-weight: 600;">x {{ item.qty }} </span> | <span class="" @click="removeFromCart(item)">Remove</span>
+                <span style="font-weight: 600;">x {{ item.itemQty }} </span> | <span class="" @click="removeFromCart(item); updateShopQty(item);">Remove</span>
             </div>
 
         </div>
 
         <div class="app-cart-grid-item-total">
-            <strong :number="number">{{ item.price * item.qty | currencyFormat }}</strong>
+            <strong :number="number">{{ item.price * item.itemQty | currencyFormat }}</strong>
         </div>
     </li>
 </template>
@@ -58,6 +58,7 @@ import NumberInputSpinner from 'vue-number-input-spinner';
     methods: {
         ...mapActions({
             removeFromCart: 'cart/removeFromCart',
+            updateShopQty: 'shop/updateShopQty',
             // itemQty: 'cart/itemQty',
             qtyChange: 'cart/qtyChange',
         }),

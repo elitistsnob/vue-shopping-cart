@@ -18,23 +18,31 @@ export default {
         });
         if (!itemExists) {
             state.items.push(item);
+            // item.inventory -= 1;
         }
-        else {
-            state.items = state.items.map(element => {
-                if (element.itemid === item.itemid) {
-                    element.qty += 1;
-                }
-                return element;
-            });
-        }
+        // else {
+        //     state.items = state.items.map(element => {
+        //         if (element.itemid === item.itemid) {
+        //             element.qty += 1;
+        //             element.inventory -= 1;
+        //         }
+        //         return element;
+        //     });
+        // }
     },
 
-    [types.CART_UPDATE_ITEMS](state, items) {
-        state.items = items;
+    [types.CART_UPDATE_ITEMS](state, item) {
+        // state.items = items;
+
+        // const items = state.items;
+        const index = state.items.findIndex(item => item.itemid === item.itemid);
+        if (index !== -1) {
+            state.items.splice(index, 1);
+        }
     },
 
     [types.UPDATE_CART](state, item) {
-        const qty = item.qty;
+        const qty = item.itemQty;
         const itemIndex = state.items.indexOf(item);
         // alert(itemIndex);
 
