@@ -2,7 +2,7 @@
     <footer class="site-footer">
         <section class="site-footer-topper">
             <h2>Why buy your guitar from Hipster?</h2>
-            <a href="" class="btn">Tell me why!</a>
+            <nuxt-link to="/cart/checkout" class="btn">Tell me why!</nuxt-link>
         </section>
         <div class="inner">
             <div class="nav-column">

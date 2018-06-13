@@ -12,12 +12,12 @@
             <NumberInputSpinner
                 :max="item.inventory"
                 :min="1"
-                :inputClass="spinner"
-                :buttonClass="spinnerButton"
                 :integerOnly="true"
                 v-model="item.qty"
             />
-            <!-- <input type="number" @focus="qtyChange( { item, qty: + $event.target.value } )" name="qty"  :value="item.qty"> -->
+
+            <input type="hidden" @change="qtyChange(itemQty)" name="qty"  :value="qtyChange(itemQty)" :max="item.inventory" min="1">
+
             <div class="qty-controls">
                 <span style="font-weight: 600;">x {{ item.qty }} </span> | <span class="" @click="removeFromCart(item)">Remove</span>
             </div>
@@ -31,10 +31,9 @@
 </template>
 
 <script>
-import {mapState, mapActions, mapGetters} from 'vuex';
+import {mapState, mapActions, mapGetters, mapMutations} from 'vuex';
 import currencyFormat from '~/assets/js/currencyFormat';
-import NumberInputSpinner from 'vue-number-input-spinner'
-
+import NumberInputSpinner from 'vue-number-input-spinner';
 
  export default {
     components: {
@@ -46,14 +45,24 @@ import NumberInputSpinner from 'vue-number-input-spinner'
             required: true,
         },
     },
+    data () {
+        return {
+            number: 0,
+        }
+    },
     computed: {
-
+        ...mapGetters({
+            // itemQty: 'cart/itemQty',
+        }),
     },
     methods: {
         ...mapActions({
             removeFromCart: 'cart/removeFromCart',
-            itemQty: 'cart/itemQty',
+            // itemQty: 'cart/itemQty',
             qtyChange: 'cart/qtyChange',
+        }),
+        ...mapGetters({
+            itemQty: 'cart/itemQty',
         }),
     },
     filters: {

@@ -16,6 +16,7 @@
         </p>
         <p class="product-stock">
             <span v-if="product.inventory > 0">
+                {{ message }}
                 <span v-if="product.inventory === 1">ONLY </span>{{ product.inventory }} available</span>
             <span v-else></span>
         </p>
@@ -33,6 +34,7 @@
         data() {
             return {
                 isActive: false,
+                message: 'Hello',
             }
         },
         props: {
@@ -40,6 +42,9 @@
                 required: true,
                 type: Object,
             }
+        },
+        computed: {
+
         },
         methods: {
             ...mapActions({
@@ -63,7 +68,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    margin: 5px;
+    margin: 5px 5px 50px;
     overflow: hidden;
     padding: 0 0 25px 0;
     position: relative;
@@ -79,13 +84,13 @@
         flex: 1 1 auto;
         font-size: 18px;
         justify-content: center;
-        // margin-bottom: 20px;
         padding: 5px 5px;
 
         h2 {
             display: block;
             font-size: 16px;
             font-weight: 700;
+            padding: 0 10px;
             text-transform: uppercase;
         }
     }
@@ -103,10 +108,10 @@
         align-items: flex-end;
         color: #777;
         display: flex;
+        flex: 1 1 auto;
         font-size: 30px;
         font-weight: 900;
         justify-content: center;
-        flex: 1 1 auto;
         margin: 0;
         padding: 5px;
 
@@ -155,7 +160,6 @@
 
         .btn--add-to-cart.active {
             background: green;
-            cursor: not-allowed;
             padding-right: 35px;
 
             .btn-qty {

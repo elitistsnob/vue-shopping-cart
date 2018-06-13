@@ -9,7 +9,7 @@
         v-on:leave="leave"
         v-on:after-leave="afterLeave"
         ref="cartGrid">
-        <AppCartItem v-for="item in items" :key="item.itemid" :item="item" class="" ref="infoBox"/>
+        <AppCartItem v-for="item in items" :key="item.itemid" :item="item" class=""/>
     </transition-group>
 </template>
 
@@ -25,7 +25,6 @@ export default {
         return {
             showDiv: false,
         }
-
     },
     computed: {
         ...mapState({
@@ -34,14 +33,11 @@ export default {
     },
     methods: {
         beforeLeave(el) {
-            // console.log(el);
             let gridHeight = this.$refs.cartGrid.$el.clientHeight;
-
             this.$refs.cartGrid.$el.style.height = `${gridHeight}px`;
 
         },
         leave(el) {
-            // console.log(el);
             let gridHeight = this.$refs.cartGrid.$el.clientHeight;
 
             // document.getElementById('app-cart-grid').style.height = gridHeight;
@@ -62,8 +58,6 @@ export default {
             // })
 
             // let gridsHeight = document.getElementById('app-cart-grid').clientHeight + 'px';
-
-            // console.log('I LEFT!');
         },
     },
 };

@@ -9,7 +9,7 @@
         <div class="app-cart-header__price">
             Price
         </div>
-        
+
     </header>
 </template>
 
@@ -25,7 +25,7 @@
     font-weight: 600;
     justify-content: space-around;
     padding: 20px;
-    
+
     h2 {
         margin: 0;
     }

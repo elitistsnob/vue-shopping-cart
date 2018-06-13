@@ -12,6 +12,12 @@
         components: {
             AppProductsItem,
         },
+        mutations: {
+            // incrementItemQuantity (state, { id }) {
+            //     const cartItem = state.items.find(item => item.itemid === id)
+            //     cartItem.qty++
+            // },
+        },
         data() {
             return  {
                 items: [

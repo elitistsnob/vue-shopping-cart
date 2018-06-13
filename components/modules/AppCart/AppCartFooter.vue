@@ -2,7 +2,7 @@
     <div>
         <footer class="app-cart-footer">
             <p class="app-cart-total">
-            <strong>Cart total: </strong>  <span>{{ total | currencyFormat }}</span></p>
+            <strong>Cart total: </strong>  <span>{{ getCartTotal | currencyFormat }}</span></p>
         </footer>
         <div class="app-cart-checkout">
             <nuxt-link to="/cart/checkout" class="btn btn--add-to-cart">Checkout</nuxt-link>
@@ -18,7 +18,9 @@ export default {
     computed: {
         ...mapState({
             items: state => state.cart.items,
-
+        }),
+        ...mapGetters({
+            getCartTotal: 'cart/getCartTotal',
         }),
         total() {
             return this.items.reduce((total, item) => total + item.price * item.qty, 0);
@@ -58,7 +60,7 @@ export default {
 
 .app-cart-checkout {
     font-size: 1.5em;
-    padding: 30px 0 0;
+    padding: 30px;
     text-align: right;
 }
 </style>
