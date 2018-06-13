@@ -13,13 +13,19 @@ export default {
         // state.items.push(item);
 
         // Surpressing CART_ADD_ITEM action after first click
-        let itemExists = state.items.indexOf(item) > -1;
+        let itemExists = state.items.find(i => {
+            return i.itemid === item.itemid
+        });
         if (!itemExists) {
             state.items.push(item);
         }
         else {
-            state.items.push(item.qty);
-            // state.items.push(item);
+            state.items = state.items.map(element => {
+                if (element.itemid === item.itemid) {
+                    element.qty += 1;
+                }
+                return element;
+            });
         }
     },
 

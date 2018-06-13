@@ -21,7 +21,7 @@
             <span v-else></span>
         </p>
         <p class="product-button">
-            <a href="" v-if="product.status == 'in-stock' && product.inventory > 0" :class="{ active: isActive }" class="btn btn--add-to-cart" @click.prevent="addToCart(product); addedToCart();">Add to Cart <span class="btn-qty">{{ product.qty }}</span></a>
+            <a href="" v-if="product.status == 'in-stock' && product.inventory > 0" :class="{ active: isActive }" class="btn btn--add-to-cart" @click.prevent="addToCart(product); addedToCart();">Add to Cart <span class="btn-qty">{{ getItemQty }}</span></a>
         </p>
     </div>
 </template>
@@ -44,7 +44,9 @@
             }
         },
         computed: {
-
+            ...mapGetters({
+                getItemQty: 'shop/getItemQty',
+            }),
         },
         methods: {
             ...mapActions({
